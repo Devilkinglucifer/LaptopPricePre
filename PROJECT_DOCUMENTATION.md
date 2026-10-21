@@ -7,7 +7,7 @@
 **License & Cost:** 100% Free & Open-Source (Zero-Cost FOSS)  
 **Local Development URL:** `http://localhost:8501`  
 **Permanent Live Cloud URL:** `https://laptop-valuation-cu.streamlit.app` *(Streamlit Community Cloud)*  
-**Active Live Tunnel URL:** `https://honest-paths-cut.loca.lt` *(Tunnel IP Password: `152.59.118.118`)*
+**Active Live Public URL:** `https://burst-upc-controversial-hello.trycloudflare.com` *(Cloudflare Edge - No Password Needed)*
 
 ---
 
