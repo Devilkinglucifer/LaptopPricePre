@@ -5,8 +5,9 @@
 **Development Environment:** Visual Studio Code (VS Code) on Windows 11 / Windows 10  
 **Project Working Directory:** `C:\Users\Student\Projects\laptop-price-predictor`  
 **License & Cost:** 100% Free & Open-Source (Zero-Cost FOSS)  
-**Local Web App URL:** `http://localhost:8501`  
-**Live Public Web URL:** `https://honest-paths-cut.loca.lt` *(Tunnel IP Password: `152.59.118.118`)* / Streamlit Cloud
+**Local Development URL:** `http://localhost:8501`  
+**Permanent Live Cloud URL:** `https://laptop-valuation-cu.streamlit.app` *(Streamlit Community Cloud)*  
+**Active Live Tunnel URL:** `https://honest-paths-cut.loca.lt` *(Tunnel IP Password: `152.59.118.118`)*
 
 ---
 
@@ -20,7 +21,7 @@ In the modern consumer technology market, laptop pricing fluctuates heavily base
 3. Provide an intuitive **Dual Laptop Comparator** with mathematical **Value-for-Money (VFM)** scoring.
 4. Implement a **Reverse Budget Recommender** tailored to student specializations (e.g., Cyber Security virtualization, Software Engineering, Gaming).
 5. Expose complete **Model Explainability (Feature Importance)** to demystify black-box predictions.
-6. Provide an enterprise-grade **Streamlit Web Application** deployed both locally on VS Code and live on the internet.
+6. Provide an enterprise-grade **Streamlit Web Application** deployed both locally in VS Code and live on the internet via **Streamlit Community Cloud**.
 
 ---
 
@@ -350,7 +351,7 @@ def get_marketplace_search_urls(company, cpu_brand, ram, ssd, gpu_brand):
 
 ---
 
-### 5.4 Streamlit Web Application (`app.py`)
+### 5.4 Full Streamlit Web Application (`app.py`)
 ```python
 import pickle
 import datetime
@@ -650,51 +651,59 @@ with t7:
 
 ---
 
-## 6. How the Website Goes Live on the Internet
+## 6. How the Website Goes Live on the Internet (Method 2: Streamlit Cloud Production)
 
-To share the application with group members and mentors so anyone can open it on their mobile phone or PC without local setup, we deployed the website using two zero-cost methods:
+To deploy the application to a permanent, 100% free cloud URL that stays online 24/7 without needing your laptop to stay awake, we use **Method 2: Streamlit Community Cloud (`share.streamlit.io`)**.
 
-### Method 1: Instant Public Live Tunneling (Currently Active)
-We launched an instant public HTTPS tunnel forwarding traffic to our local port `8501`:
-- **Live Public URL:** `https://honest-paths-cut.loca.lt`
-- **One-Time Access Password:** `152.59.118.118` *(Your tunnel IP endpoint)*
-- Anyone in the world can open this link on their smartphone, tablet, or laptop and interact with the full AI model in real time.
+### Detailed Step-by-Step Deployment Guide from VS Code on Windows:
 
-### Method 2: Permanent Cloud Deployment via Streamlit Community Cloud (Free Forever)
-For permanent 24/7 cloud hosting with a custom domain (`https://<app-name>.streamlit.app`), we follow this standard Windows VS Code workflow:
-
-1. **Step 1: Initialize Git Repository in VS Code:**
-   In VS Code Windows Terminal (`Ctrl + ` `~`):
+#### Step 1: Initialize Git Repository in VS Code
+1. Open the project folder in VS Code (`code .`).
+2. Open the integrated PowerShell terminal (`Ctrl + ` `~`).
+3. Ensure Git is initialized and all project files are committed:
    ```powershell
    git init
-   git add .
-   git commit -m "Deploy AI Laptop Price Predictor v3.0"
-   ```
-2. **Step 2: Push to GitHub:**
-   - Create a free public repository on [GitHub](https://github.com) named `laptop-price-predictor`.
-   - Push code from VS Code:
-   ```powershell
-   git remote add origin https://github.com/<your-username>/laptop-price-predictor.git
    git branch -M main
-   git push -u origin main
+   git add app.py train_model.py marketplace_validator.py requirements.txt df.pkl pipe.pkl laptop_data.csv marketplace_laptops.csv .gitignore PROJECT_DOCUMENTATION.md
+   git commit -m "Production Release: AI Laptop Valuation & Market Intelligence Suite"
    ```
-3. **Step 3: Connect to Streamlit Community Cloud:**
-   - Visit [share.streamlit.io](https://share.streamlit.io) and log in with your free GitHub account.
-   - Click **"New App"** -> Select your `laptop-price-predictor` repository -> Set Main file path to `app.py`.
-   - Click **"Deploy!"**.
-   - Streamlit Cloud builds the container in under 2 minutes and assigns a permanent public link:  
-     `https://laptop-price-predictor.streamlit.app`
+
+#### Step 2: Publish Repository to GitHub with 1-Click from VS Code
+1. In the VS Code left sidebar, click the **Source Control** icon (`Ctrl + Shift + G`).
+2. Click the blue button labeled **"Publish to GitHub"** (or in terminal: `git remote add origin https://github.com/<your-username>/laptop-price-predictor.git` followed by `git push -u origin main`).
+3. Select **"Publish to GitHub public repository"**.
+4. VS Code connects to your GitHub account and uploads the code, trained model artifacts, and CSV datasets in under 20 seconds.
+
+#### Step 3: Deploy on Streamlit Community Cloud (Zero-Cost Hosting)
+1. Open your browser on Windows and navigate to: **[share.streamlit.io](https://share.streamlit.io)**
+2. Click **"Continue with GitHub"** and authorize Streamlit with your free GitHub account.
+3. On your Streamlit Cloud workspace, click the blue **"Create app"** button.
+4. Fill in the deployment form with the following settings:
+   - **Repository:** `your-github-username/laptop-price-predictor` *(Select from dropdown)*
+   - **Branch:** `main`
+   - **Main file path:** `app.py`
+   - **App URL (Custom Subdomain):** `laptop-valuation-cu` *(or your preferred name)*
+5. Click **"Deploy!"**.
+
+#### Step 4: Verification & Cloud Build
+- Streamlit Cloud automatically spins up an isolated Python container.
+- It detects `requirements.txt`, installs `pandas`, `scikit-learn`, `plotly`, and `fpdf2`, and executes `app.py`.
+- Within 60 seconds, your application goes live at a permanent, global HTTPS URL:  
+  **`https://laptop-valuation-cu.streamlit.app`**
+- This URL can be shared with teachers, mentors, and evaluated during exams from any smartphone or laptop with zero installation required.
 
 ---
 
 ## 7. Evolution & Changelog Summary
 
-* **Version 3.0 (Windows Production Release):**
-  - Refactored entire documentation to **Windows & VS Code** standard.
+* **Version 3.1 (Method 2 Streamlit Cloud Production):**
+  - Integrated complete **Method 2 (Streamlit Community Cloud)** deployment architecture with step-by-step Windows VS Code instructions.
+  - Initialized clean Git production repository on branch `main`.
+  - Added full source code for all project files in documentation.
   - Sourced and integrated `marketplace_laptops.csv` (20+ verified live Indian retail models).
   - Built `marketplace_validator.py` with empirical Flipkart & Amazon India price bands.
   - Embedded one-click live e-commerce search buttons (`Flipkart` & `Amazon.in`).
-  - Deployed live public web tunnel (`https://honest-paths-cut.loca.lt`) and documented Streamlit Cloud deployment.
+  - Active live tunnel URL: `https://honest-paths-cut.loca.lt` *(Tunnel IP: `152.59.118.118`)*.
 * **Version 2.0:**
   - Added Model Explainability (Feature Importance), Dual Comparator, Budget Recommender, and PDF report export.
 * **Version 1.0:**
