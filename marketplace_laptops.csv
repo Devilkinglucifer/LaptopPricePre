@@ -1,0 +1,21 @@
+Product_Name,Brand,Category,Processor,RAM_GB,Storage,GPU,Live_Marketplace_Price,Platform,Rating
+Lenovo IdeaPad Slim 3 (12th Gen Intel Core i5),Lenovo,Notebook,Intel Core i5,16,512GB SSD,Intel Iris Xe,51990,Flipkart / Amazon India,4.3
+HP 15s (AMD Ryzen 5 5500U Thin & Light),HP,Notebook,AMD Processor,16,512GB SSD,AMD Radeon,44990,Flipkart / Amazon India,4.2
+Acer Aspire 7 (12th Gen Intel Core i5 + RTX 3050),Acer,Gaming,Intel Core i5,16,512GB SSD,Nvidia,56990,Flipkart / Amazon India,4.4
+Apple MacBook Air M2 (Liquid Retina Display),Apple,Ultrabook,Other Intel Processor,8,256GB SSD,Intel,89900,Amazon.in / Flipkart,4.7
+Dell Inspiron 3520 (12th Gen Intel Core i3),Dell,Notebook,Intel Core i3,8,512GB SSD,Intel,37490,Flipkart / Amazon India,4.1
+ASUS TUF Gaming F15 (Intel Core i5 11th Gen + RTX 2050),Asus,Gaming,Intel Core i5,16,512GB SSD,Nvidia,52990,Amazon.in / Flipkart,4.3
+Apple MacBook Air M4 (16GB Unified Memory / 256GB SSD),Apple,Ultrabook,Other Intel Processor,16,256GB SSD,Intel,97900,Flipkart / Apple Store,4.8
+HP Pavilion x360 2-in-1 (Intel Core i5 13th Gen Touch),HP,2 in 1 Convertible,Intel Core i5,16,512GB SSD,Intel,68990,Flipkart / Croma,4.3
+Lenovo LOQ (13th Gen Intel Core i5 + RTX 4050 6GB),Lenovo,Gaming,Intel Core i5,16,512GB SSD,Nvidia,74990,Flipkart / Amazon India,4.5
+Dell Inspiron 15 (13th Gen Intel Core i7 / 16GB RAM),Dell,Notebook,Intel Core i7,16,1TB SSD,Intel,79990,Amazon.in / Dell Store,4.2
+Asus Vivobook 15 (Intel Core i3 12th Gen / 8GB RAM),Asus,Notebook,Intel Core i3,8,512GB SSD,Intel,35990,Flipkart / Amazon India,4.2
+MSI Thin 15 (12th Gen Intel Core i7 + RTX 3050),MSI,Gaming,Intel Core i7,16,512GB SSD,Nvidia,68990,Amazon.in / Flipkart,4.1
+Acer Swift Go 14 (OLED Display / Intel Core i5 13th Gen),Acer,Ultrabook,Intel Core i5,16,512GB SSD,Intel,59990,Flipkart / Amazon India,4.4
+Samsung Galaxy Book4 (Intel Core i5 13th Gen / 16GB),Samsung,Notebook,Intel Core i5,16,512GB SSD,Intel,64990,Amazon.in / Samsung,4.3
+Lenovo ThinkPad E14 (AMD Ryzen 5 7530U Business Laptop),Lenovo,Notebook,AMD Processor,16,512GB SSD,AMD,54990,Amazon.in / Lenovo,4.4
+HP Envy x360 (Intel Core i7 13th Gen OLED Touch),HP,2 in 1 Convertible,Intel Core i7,16,1TB SSD,Intel,99990,Flipkart / HP Store,4.6
+Apple MacBook Pro 14 (M3 Pro Chip / 18GB / 512GB SSD),Apple,Workstation,Other Intel Processor,16,512GB SSD,Intel,169900,Amazon.in / Apple,4.9
+Asus ROG Zephyrus G14 (AMD Ryzen 9 + RTX 4060 OLED),Asus,Gaming,AMD Processor,16,1TB SSD,Nvidia,144990,Amazon.in / Asus,4.7
+Dell XPS 13 (Intel Core i7 / InfinityEdge / 16GB),Dell,Ultrabook,Intel Core i7,16,512GB SSD,Intel,124990,Dell Store / Amazon,4.5
+Acer Extensa 15 (Intel Core i3 / 8GB / 256GB SSD),Acer,Notebook,Intel Core i3,8,256GB SSD,Intel,29990,Flipkart / Amazon India,4.0
