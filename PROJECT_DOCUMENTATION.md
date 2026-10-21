@@ -4,6 +4,7 @@
 **Subject:** AI Applications Project (Topic #110)  
 **Development Environment:** Visual Studio Code (VS Code) on Windows 11 / Windows 10  
 **Project Working Directory:** `C:\Users\Student\Projects\laptop-price-predictor`  
+**GitHub Repository:** [https://github.com/Devilkinglucifer/LaptopPricePre](https://github.com/Devilkinglucifer/LaptopPricePre)  
 **License & Cost:** 100% Free & Open-Source (Zero-Cost FOSS)  
 **Local Development URL:** `http://localhost:8501`  
 **Permanent Live Cloud URL:** `https://laptop-valuation-cu.streamlit.app` *(Streamlit Community Cloud)*  
@@ -670,7 +671,7 @@ To deploy the application to a permanent, 100% free cloud URL that stays online 
 
 #### Step 2: Publish Repository to GitHub with 1-Click from VS Code
 1. In the VS Code left sidebar, click the **Source Control** icon (`Ctrl + Shift + G`).
-2. Click the blue button labeled **"Publish to GitHub"** (or in terminal: `git remote add origin https://github.com/<your-username>/laptop-price-predictor.git` followed by `git push -u origin main`).
+2. Click the blue button labeled **"Publish to GitHub"** (or in terminal: `git remote add origin https://github.com/Devilkinglucifer/LaptopPricePre.git` followed by `git push -u origin main`).
 3. Select **"Publish to GitHub public repository"**.
 4. VS Code connects to your GitHub account and uploads the code, trained model artifacts, and CSV datasets in under 20 seconds.
 
@@ -679,7 +680,7 @@ To deploy the application to a permanent, 100% free cloud URL that stays online 
 2. Click **"Continue with GitHub"** and authorize Streamlit with your free GitHub account.
 3. On your Streamlit Cloud workspace, click the blue **"Create app"** button.
 4. Fill in the deployment form with the following settings:
-   - **Repository:** `your-github-username/laptop-price-predictor` *(Select from dropdown)*
+   - **Repository:** `Devilkinglucifer/LaptopPricePre` *(Select from dropdown)*
    - **Branch:** `main`
    - **Main file path:** `app.py`
    - **App URL (Custom Subdomain):** `laptop-valuation-cu` *(or your preferred name)*
