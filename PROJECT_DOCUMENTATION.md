@@ -4,11 +4,8 @@
 **Subject:** AI Applications Project (Topic #110)  
 **Development Environment:** Visual Studio Code (VS Code) on Windows 11 / Windows 10  
 **Project Working Directory:** `C:\Users\Student\Projects\laptop-price-predictor`  
-**GitHub Repository:** [https://github.com/<your-username>/laptop-price-predictor](https://github.com/<your-username>/laptop-price-predictor)  
 **License & Cost:** 100% Free & Open-Source (Zero-Cost FOSS)  
-**Local Development URL:** `http://localhost:8501`  
-**Permanent Live Cloud URL:** `https://laptop-valuation-cu.streamlit.app` *(Streamlit Community Cloud)*  
-**Active Live Public URL:** `https://burst-upc-controversial-hello.trycloudflare.com` *(Cloudflare Edge - No Password Needed)*
+**Official Live Web Application:** [https://laptoppricepredictioncu.streamlit.app/](https://laptoppricepredictioncu.streamlit.app/)
 
 ---
 
@@ -21,8 +18,8 @@ In the modern consumer technology market, laptop pricing fluctuates heavily base
 2. Ground predictions in **Live Indian E-Commerce Market Realities** through empirical retail price bands (Flipkart & Amazon.in).
 3. Provide an intuitive **Dual Laptop Comparator** with mathematical **Value-for-Money (VFM)** scoring.
 4. Implement a **Reverse Budget Recommender** tailored to student specializations (e.g., Cyber Security virtualization, Software Engineering, Gaming).
-5. Expose complete **Model Explainability (Feature Importance)** to demystify black-box predictions.
-6. Provide an enterprise-grade **Streamlit Web Application** deployed both locally in VS Code and live on the internet via **Streamlit Community Cloud**.
+5. Expose complete **Model Explainability (Feature Importance)** to demystify predictions.
+6. Provide an enterprise-grade **Streamlit Web Application** accessible live on the web at `https://laptoppricepredictioncu.streamlit.app/`.
 
 ---
 
@@ -31,7 +28,7 @@ In the modern consumer technology market, laptop pricing fluctuates heavily base
 This project was built entirely inside **Visual Studio Code on Windows**. Below are the setup procedures and extensions configured in the editor.
 
 ### 2.1 Installed VS Code Extensions
-To transform VS Code into an end-to-end Python AI workstation, the following extensions were installed from the VS Code Marketplace (`Ctrl + Shift + X`):
+The following extensions were installed from the VS Code Marketplace (`Ctrl + Shift + X`):
 
 1. **Python (`ms-python.python` by Microsoft):**
    - Provides IntelliSense, linting, debugging, code navigation, and virtual environment auto-selection.
@@ -59,13 +56,15 @@ python -m venv venv
 # 4. Activate the virtual environment
 # On Windows PowerShell:
 .\venv\Scripts\Activate.ps1
-# (If script execution is disabled, run: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass)
 
 # On Windows Command Prompt (cmd.exe):
 venv\Scripts\activate.bat
 
 # 5. Upgrade pip and install all required libraries
 pip install -r requirements.txt
+
+# 6. Run the application locally
+streamlit run app.py
 ```
 
 ---
@@ -82,7 +81,7 @@ pip install -r requirements.txt
 
 ### 3.2 How Data Was Added to VS Code
 1. Download the raw CSV files.
-2. Drag and drop `laptop_data.csv` and `marketplace_laptops.csv` directly into the root folder of the project in the VS Code File Explorer sidebar (`Ctrl + Shift + E`).
+2. Place `laptop_data.csv` and `marketplace_laptops.csv` directly into the root folder of the project in the VS Code File Explorer sidebar (`Ctrl + Shift + E`).
 
 ### 3.3 Data Cleaning & Feature Engineering
 - **RAM & Weight:** Stripped `"GB"` and `"kg"` string suffixes and converted them to `int32` and `float32`.
@@ -102,8 +101,8 @@ Evaluated across 6 algorithms on a 15% holdout test dataset:
 | Model | $R^2$ Variance Score | MAE (Log Scale) | RMSE (Log Scale) | Evaluation Notes |
 | :--- | :--- | :--- | :--- | :--- |
 | **Random Forest Regressor** | **0.8841** | **0.1595** | **0.2105** | **🏆 Champion Model (100 Trees, Max Depth 15)** |
-| **Gradient Boosting** | 0.8824 | 0.1592 | 0.2121 | Sequential boosting; slightly slower inference |
-| **Decision Tree** | 0.8358 | 0.1845 | 0.2507 | Fast single tree; susceptible to variance |
+| **Gradient Boosting** | 0.8824 | 0.1592 | 0.2121 | Sequential boosting; high accuracy |
+| **Decision Tree** | 0.8358 | 0.1845 | 0.2507 | Fast single tree baseline |
 | **Ridge Regression (L2)** | 0.8127 | 0.2093 | 0.2677 | Regularized baseline penalizing large weights |
 | **Linear Regression (OLS)**| 0.8073 | 0.2102 | 0.2715 | Linear baseline; struggles with hardware tier jumps |
 | **Lasso Regression (L1)** | 0.8072 | 0.2111 | 0.2716 | Sparsity-inducing regularization |
@@ -652,60 +651,17 @@ with t7:
 
 ---
 
-## 6. How the Website Goes Live on the Internet (Method 2: Streamlit Cloud Production)
+## 6. Project Directory Structure
 
-To deploy the application to a permanent, 100% free cloud URL that stays online 24/7 without needing your laptop to stay awake, we use **Method 2: Streamlit Community Cloud (`share.streamlit.io`)**.
-
-### Detailed Step-by-Step Deployment Guide from VS Code on Windows:
-
-#### Step 1: Initialize Git Repository in VS Code
-1. Open the project folder in VS Code (`code .`).
-2. Open the integrated PowerShell terminal (`Ctrl + ` `~`).
-3. Ensure Git is initialized and all project files are committed:
-   ```powershell
-   git init
-   git branch -M main
-   git add app.py train_model.py marketplace_validator.py requirements.txt df.pkl pipe.pkl laptop_data.csv marketplace_laptops.csv .gitignore PROJECT_DOCUMENTATION.md
-   git commit -m "Production Release: AI Laptop Valuation & Market Intelligence Suite"
-   ```
-
-#### Step 2: Publish Repository to GitHub with 1-Click from VS Code
-1. In the VS Code left sidebar, click the **Source Control** icon (`Ctrl + Shift + G`).
-2. Click the blue button labeled **"Publish to GitHub"** (or in terminal: `git remote add origin https://github.com/<your-username>/laptop-price-predictor.git` followed by `git push -u origin main`).
-3. Select **"Publish to GitHub public repository"**.
-4. VS Code connects to your GitHub account and uploads the code, trained model artifacts, and CSV datasets in under 20 seconds.
-
-#### Step 3: Deploy on Streamlit Community Cloud (Zero-Cost Hosting)
-1. Open your browser on Windows and navigate to: **[share.streamlit.io](https://share.streamlit.io)**
-2. Click **"Continue with GitHub"** and authorize Streamlit with your free GitHub account.
-3. On your Streamlit Cloud workspace, click the blue **"Create app"** button.
-4. Fill in the deployment form with the following settings:
-   - **Repository:** `<your-username>/laptop-price-predictor` *(Select from dropdown)*
-   - **Branch:** `main`
-   - **Main file path:** `app.py`
-   - **App URL (Custom Subdomain):** `laptop-valuation-cu` *(or your preferred name)*
-5. Click **"Deploy!"**.
-
-#### Step 4: Verification & Cloud Build
-- Streamlit Cloud automatically spins up an isolated Python container.
-- It detects `requirements.txt`, installs `pandas`, `scikit-learn`, `plotly`, and `fpdf2`, and executes `app.py`.
-- Within 60 seconds, your application goes live at a permanent, global HTTPS URL:  
-  **`https://laptop-valuation-cu.streamlit.app`**
-- This URL can be shared with teachers, mentors, and evaluated during exams from any smartphone or laptop with zero installation required.
-
----
-
-## 7. Evolution & Changelog Summary
-
-* **Version 3.1 (Method 2 Streamlit Cloud Production):**
-  - Integrated complete **Method 2 (Streamlit Community Cloud)** deployment architecture with step-by-step Windows VS Code instructions.
-  - Initialized clean Git production repository on branch `main`.
-  - Added full source code for all project files in documentation.
-  - Sourced and integrated `marketplace_laptops.csv` (20+ verified live Indian retail models).
-  - Built `marketplace_validator.py` with empirical Flipkart & Amazon India price bands.
-  - Embedded one-click live e-commerce search buttons (`Flipkart` & `Amazon.in`).
-  - Active live tunnel URL: `https://honest-paths-cut.loca.lt` *(Tunnel IP: `152.59.118.118`)*.
-* **Version 2.0:**
-  - Added Model Explainability (Feature Importance), Dual Comparator, Budget Recommender, and PDF report export.
-* **Version 1.0:**
-  - Initial baseline model comparison and prototype.
+```
+C:\Users\Student\Projects\laptop-price-predictor\
+├── laptop_data.csv            # Original Kaggle dataset (1,304 configurations)
+├── marketplace_laptops.csv    # Curated active Indian retail catalog (Flipkart & Amazon.in)
+├── train_model.py             # Data preprocessing, feature engineering & model training
+├── marketplace_validator.py   # Live retail price band verification & search link engine
+├── app.py                     # Streamlit 7-tab Web Dashboard & PDF generator
+├── df.pkl                     # Serialized preprocessed dataset for UI dropdowns
+├── pipe.pkl                   # Exported champion Random Forest inference pipeline
+├── requirements.txt           # Python dependency declarations
+└── PROJECT_DOCUMENTATION.md   # Master technical report (this document)
+```
